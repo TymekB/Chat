@@ -12,3 +12,10 @@ app.use(express.static('public'));
 
 let io = socket(server);
 
+io.on('connection', function(socket) {
+    console.log(socket.id + " connected");
+
+    socket.on('chat', function(data) {
+        console.log(data.message);
+    });
+});

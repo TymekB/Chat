@@ -4,14 +4,16 @@ $(document).ready(function(){
 
     $("#btn-send").click(function(){
 
-        let messegeInput = $("#messege-input");
+        let messageInput = $("#message-input");
 
-        console.log(messegeInput.val());
+        socket.emit('chat', {
+            message: messageInput.val()
+        });
 
-        messegeInput.val('');
+        messageInput.val('');
     });
 
-    $("#messege-input").keypress(function(e){
+    $("#message-input").keypress(function(e){
         if(e.which === 13) {
             $("#btn-send").trigger('click');
         }
