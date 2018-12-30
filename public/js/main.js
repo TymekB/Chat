@@ -20,7 +20,7 @@ $(document).ready(function(){
     });
 
     socket.on('chat', function(data) {
-        console.log(data);
+        $("#chat ul").append('<li>' + data.message + '</li>');
     });
 
 });
