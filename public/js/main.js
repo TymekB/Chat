@@ -20,7 +20,13 @@ $(document).ready(function(){
     });
 
     socket.on('chat', function(data) {
-        $("#chat ul").append('<li>' + data.message + '</li>');
+        $("#chat ul").append(`
+            <li>
+                <div class="pull-left">${data.message}</div>
+                <div class="pull-right">${data.time}</div>
+                <div class="clearfix"></div>
+            </li>
+        `);
     });
 
 });

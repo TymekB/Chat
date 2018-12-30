@@ -1,6 +1,7 @@
 let express = require('express');
 let socket = require('socket.io');
 let xss = require('xss');
+let moment = require('moment');
 
 let app = express();
 let port = process.env.PORT || 5000;
@@ -21,7 +22,8 @@ io.on('connection', function(socket) {
         let messege = xss(data.message);
 
         io.sockets.emit('chat', {
-            message: messege
+            message: messege,
+            time: moment().format('h:mm:ss a')
         });
     });
 });
