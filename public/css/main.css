@@ -1,0 +1,22 @@
+#chat {
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+    height: 300px;
+    border-radius: 4px;
+    overflow-y: scroll;
+    margin-bottom: 15px;
+}
+
+#chat ul {
+    padding: 0;
+    margin: 0;
+}
+
+#chat ul > li {
+    padding: 5px;
+    background: #fff;
+}
+
+#chat ul > li:nth-child(even) {
+    background: #f9f9f9;
+}
