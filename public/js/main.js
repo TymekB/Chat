@@ -19,4 +19,8 @@ $(document).ready(function(){
         }
     });
 
+    socket.on('chat', function(data) {
+        console.log(data);
+    });
+
 });

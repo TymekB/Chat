@@ -16,6 +16,11 @@ io.on('connection', function(socket) {
     console.log(socket.id + " connected");
 
     socket.on('chat', function(data) {
+
         console.log(data.message);
+
+        io.sockets.emit('chat', {
+            message: data.message
+        });
     });
 });
