@@ -1,5 +1,6 @@
 let express = require('express');
 let socket = require('socket.io');
+let xss = require('xss');
 
 let app = express();
 let port = process.env.PORT || 5000;
@@ -17,10 +18,10 @@ io.on('connection', function(socket) {
 
     socket.on('chat', function(data) {
 
-        console.log(data.message);
+        let messege = xss(data.message);
 
         io.sockets.emit('chat', {
-            message: data.message
+            message: messege
         });
     });
 });
