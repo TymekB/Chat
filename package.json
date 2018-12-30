@@ -10,8 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "xss": "^1.0.3",
-    "moment": "latest"
+    "moment": "latest",
+    "socket.io": "^2.2.0",
+    "xss": "^1.0.3"
   },
   "devDependencies": {
     "socket.io": "^2.2.0"
